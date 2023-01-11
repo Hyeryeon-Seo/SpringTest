@@ -22,12 +22,12 @@ public class Test01Controller {
 	@ResponseBody
 	@RequestMapping("/lifecycle/test01/3")
 	public Map<String, Integer> mapResponse() { //<String,...> : 제너릭
-		Map<String, Integer> subjectScoreMap = new HashMap<>();
-		subjectScoreMap.put("국어", 80);// 맵 객체하나 생성
-		subjectScoreMap.put("수학", 90);
-		subjectScoreMap.put("영어", 85);
+		Map<String, Integer> map = new HashMap<>();
+		map.put("국어", 80);// 맵 객체하나 생성
+		map.put("수학", 90);
+		map.put("영어", 85);
 		
-		return subjectScoreMap;
+		return map;
 		
 		//중괄호로 묶여있으면 맵이나 딕셔너리 형태 {}
 		

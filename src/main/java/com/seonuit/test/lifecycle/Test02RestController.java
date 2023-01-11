@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// test02의 소문제 1번
 @RestController
 @RequestMapping("/lifecycle/test02")
 public class Test02RestController {
@@ -25,34 +26,39 @@ public class Test02RestController {
 	//   메소드를 만든다 그 안에 map만들고 밖에 list도 만들고... 하나의 메소드 안에!
 	
 	@RequestMapping("/1") // 답안
-	public List<Map<String, Object>> listMapRsponse() {
+	public List<Map<String, Object>> listMapResponse() {
 	
-		List<Map<String, Object>> movieListaw = new ArrayList<>(); //aw는 답안이라서
+		List<Map<String, Object>> movieListaw = new ArrayList<>(); //aw는 답안이라서 // 리스트 만들고
 
-		Map<String, Object> movie = new HashMap<>();
-		movie.put("title", "기생충");
-		movieListaw.add(movie);
+		Map<String, Object> movie = new HashMap<>(); // 맵 만들고
+		movie.put("title", "기생충"); // 맵에 key, value값 put하기
+		movieListaw.add(movie); // 리스트에 만든 맵 add하기
 		
 		movie = new HashMap<>();
 		movie.put("title", "인생은 아름다워");
 		movie.put("time", 147);
 		movieListaw.add(movie);
 		
+		// list만들고 map도 만든 후 각 맵마다 만든 후 .put > list에도 .add (맵 이름은 다를 필요없음)
 		// ----이런 식 반복
 		return movieListaw;
+		// > 마지막에만 한번 return해주면 됨
 	}
 	
 	// ------------------ ME
 	
 	//@RequestMapping("/1")
-	//public Map<String, Object> movie1Response() {
+	//public Map<String, Object> movie1Response() {   
+	//   > response다 각각 해주고 리턴해줄 필요 없음, 그냥 한 메소드response안 에서 
+	//   > 맵담은 리스트, list<Map<..> 생성하고 -  각각 map 생성해서 리스트에 add해주고
+	//   > 물론 나처럼 해도 똑같이 response되긴 한다
 		//Map<String, Object> movieMap = new HashMap<>();
 		//movieMap.put("rate", 15);
 		//movieMap.put("director", "봉준호");
 		//movieMap.put("time", 131);
 		//movieMap.put("title", "기생충");
 		
-		//return movieMap1;
+		//return movieMap1;   / > 이렇게 나처럼 movieMap 다 이름 다르게 (1,2,..) 지을 필요없음
 	//}
 
 	//public Map<String, Object> movie2Response() {
@@ -65,7 +71,7 @@ public class Test02RestController {
 		//return movieMap2;
 	//}
 	
-	public Map<String, Object> movie3Response() {
+	/* public Map<String, Object> movie3Response() {
 		Map<String, Object> movieMap3 = new HashMap<>();
 		movieMap3.put("rate", 12);
 		movieMap3.put("director", "크리스토퍼 놀란");
@@ -83,18 +89,16 @@ public class Test02RestController {
 		movieMap4.put("title", "범죄와의 전쟁 : 나쁜놈들 전성시대");
 		
 		return movieMap4;
-	}
+	} 
 	
-	
-	//
 	@RequestMapping("/6")
 	public List<Map<String, Object>> listResponse() {
 		// 파라미터? .. 근데 안받기로했다 _Map<String, Object> movieMap2, Map<String, Object> movieMap3, Map<String, Object> movieMap4
 		List<Map<String, Object>> movieList = new ArrayList<>();
 		
 		Map<String, Object> movieMap1 = new HashMap<String, Object>();
-		// servlet jsp연습문제 자바제어문2{{ put("rate", 15); put("director", "봉준호"); put("time", 131); put("title", "기생충"); } };
-		// 위에처럼 문법도 가능한데, 이건 좀 더 짧게 쓴거라서 아래처럼 .put으로 해주는게 익숙하고 낫다
+		// > servlet jsp연습문제 자바제어문2{{ put("rate", 15); put("director", "봉준호"); put("time", 131); put("title", "기생충"); } };
+		// > 위에처럼 문법도 가능한데, 이건 좀 더 짧게 쓴거라서 아래처럼 .put으로 해주는게 익숙하고 낫다
 		movieMap1.put("rate", 15);
 		movieMap1.put("director", "봉준호");
 		movieMap1.put("time", 131);
@@ -113,7 +117,7 @@ public class Test02RestController {
 		
 		return movieList;
 	
-	}
+	}  */
 	
 	
 	
